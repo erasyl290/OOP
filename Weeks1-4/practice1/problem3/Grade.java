@@ -3,10 +3,11 @@ package problem3;
 public class Grade {
 	private String grade;
 
-	Grade() {
+	public String getGrade() {
+		return grade;
 	}
 
-	Grade(int percentage) {
+	public void setGrade(int percentage) {
 		if (percentage <= 100 && percentage >= 95) {
 			grade = "A+";
 		} else if (percentage < 95 && percentage >= 90) {
@@ -30,9 +31,5 @@ public class Grade {
 		} else {
 			grade = "F";
 		}
-	}
-
-	public String toString() {
-		return grade;
 	}
 }

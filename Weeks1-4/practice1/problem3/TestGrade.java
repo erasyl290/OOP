@@ -12,8 +12,9 @@ public class TestGrade {
 		int percentage = in.nextInt();
 		in.close();
 		
-		Grade grade = new Grade(percentage);
-		System.out.println(grade);
+		Grade grade = new Grade();
+		grade.setGrade(percentage);
+		System.out.println(grade.getGrade());
 	}
 
 }
