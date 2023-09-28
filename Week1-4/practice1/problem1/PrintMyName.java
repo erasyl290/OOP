@@ -9,7 +9,7 @@ public class PrintMyName {
 
 		Scanner in = new Scanner(System.in);
 		System.out.print("Write your name: ");
-		String name = in.next();
+		String name = in.nextLine();
 		in.close();
 
 		MyName result = new MyName(name);
