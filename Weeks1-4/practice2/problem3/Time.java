@@ -25,15 +25,17 @@ public class Time {
 	}
 
 	public void add(Time time) {
-		hour += time.hour;
+		int formatHour = time.hour;
+		if (formatHour > 23)
+			formatHour -= formatHour / 24 * 24;
+		hour += formatHour;
 		min += time.min;
 		sec += time.sec;
 		convertToHours();
 	}
 
-	public String setTime() {
+	public String setTime(int hour) {
 		String time = "";
-
 		if (hour < 10)
 			time += '0';
 		time += hour + ":";
@@ -45,27 +47,39 @@ public class Time {
 		if (sec < 10)
 			time += '0';
 		time += sec;
-
 		return time;
 	}
 
 	public String toUniversal() {
-		if (hour > 23)
-			hour -= hour / 24 * 24;
-		return setTime();
+		int formatHour = hour;
+
+		if (formatHour > 23)
+			formatHour -= formatHour / 24 * 24;
+
+		return setTime(formatHour);
 	}
 
 	public String toStandard() {
-		if (hour > 12)
-			hour -= 12;
-		if (hour > 24) {
-			hour -= hour / 24 * 24;
-			return setTime() + " PM";
+		String end = " AM";
+		int formatHour = hour;
+		
+		if (formatHour > 23) {
+			formatHour -= formatHour / 24 * 24;
+			if (formatHour == 0) {
+				formatHour = 12;
+				end = " PM";
+			}
 		}
-		return setTime() + " AM";
+		
+		if (formatHour > 12) {
+			formatHour -= 12;
+			end = " PM";
+		}
+
+		return setTime(formatHour) + end;
 	}
 
 	public String toString() {
-		return setTime();
+		return setTime(hour);
 	}
 }
