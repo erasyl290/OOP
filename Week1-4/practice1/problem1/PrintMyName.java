@@ -9,11 +9,11 @@ public class PrintMyName {
 
 		Scanner in = new Scanner(System.in);
 		System.out.print("Write your name: ");
-		String name = in.nextLine();
+		String name = in.next();
 		in.close();
 
 		MyName result = new MyName(name);
-		System.out.print(result);
+		System.out.println(result);
 	}
 
 }
