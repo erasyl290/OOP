@@ -6,16 +6,16 @@ public class Student {
 	public int year;
 	public static int quantity;
 
-	Student() {
+	public Student() {
 		id += ++quantity;
 	}
 
-	Student(String name) {
+	public Student(String name) {
 		this();
 		this.name = name;
 	}
 	
-	Student(String name, int year){
+	public Student(String name, int year){
 		this(name);
 		this.year = year;
 	}
