@@ -62,11 +62,11 @@ public class Course {
 	public String toString() {
 		String result = name;
 		if (credits != 0)
-			result += " − " + credits;
-		if (description != null)
-			result += "\nDescription: " + description;
+			result += " − " + credits + " credits";
 		if (prerequisite != null)
 			result += " / Prerequisite: " + prerequisite.name;
+		if (description != null)
+			result += "\nDescription: " + description;
 		return result + "\n";
 	}
 }

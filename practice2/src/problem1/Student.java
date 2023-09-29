@@ -25,6 +25,8 @@ public class Student {
 	}
 	
 	public String toString() {
+		if (year == 0)
+			return id + " " + name;
 		return id + " " + name + ' ' + year;
 	}
 }
