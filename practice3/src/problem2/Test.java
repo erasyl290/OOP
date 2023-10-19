@@ -16,9 +16,7 @@ public class Test {
 		while(true) {
 			name = "0";
 			System.out.print("Name: ");
-			System.out.println(name.isEmpty());
 			name = in.nextLine();
-			System.out.println(name.isEmpty());
 			if(name.isEmpty() || name.equals("Exit")) {
 				break;
 			}
@@ -38,6 +36,7 @@ public class Test {
 				
 				System.out.print("Fee: ");
 				double fee = in.nextDouble();
+				in.nextLine();
 				
 				people.add(new Student(name, address, program, year, fee));
 				
@@ -47,6 +46,7 @@ public class Test {
 				
 				System.out.print("Salary: ");
 				double pay = in.nextDouble();
+				in.nextLine();
 				
 				people.add(new Staff(name, address, school, pay));
 				
@@ -56,7 +56,10 @@ public class Test {
 		} in.close();
 		System.out.println("Stop processing...\n");
 		
-		System.out.println("Added people: ");
+		
+		if(!people.isEmpty()) {
+			System.out.println("Added people: ");
+		}
 		for(Person p: people) {
 			System.out.print(p + "\n");
 		}
