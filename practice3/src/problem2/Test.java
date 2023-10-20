@@ -12,11 +12,9 @@ public class Test {
 		Scanner in = new Scanner(System.in);
 		System.out.println("Adding people... Enter inquired data or type \"Exit\"");
 		
-		String name = "0";
 		while(true) {
-			name = "0";
 			System.out.print("Name: ");
-			name = in.nextLine();
+			String name = in.nextLine();
 			if(name.isEmpty() || name.equals("Exit")) {
 				break;
 			}
