@@ -1,8 +1,8 @@
 package problem2;
 
 public class Staff extends Person{
-	protected String school;
-	protected double pay;
+	private String school;
+	private double pay;
 	
 	public String getSchool() {
 		return school;
@@ -21,8 +21,7 @@ public class Staff extends Person{
 	}
 	
 	public Staff(String name, String address, String school, double pay) {
-		super.name = name;
-		super.address = address;
+		super(name, address);
 		this.school = school;
 		this.pay = pay;
 	}

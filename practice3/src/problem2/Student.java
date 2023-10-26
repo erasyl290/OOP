@@ -1,9 +1,9 @@
 package problem2;
 
 public class Student extends Person{
-	protected String program;
-	protected int year;
-	protected double fee;
+	private String program;
+	private int year;
+	private double fee;
 	
 	public String getProgram() {
 		return program;
@@ -33,8 +33,7 @@ public class Student extends Person{
 	}
 	
 	public Student(String name, String address, String program, int year, double fee) {
-		super.name = name;
-		super.address = address;
+		super(name, address);
 		this.program = program;
 		this.year = year;
 		this.fee = fee;

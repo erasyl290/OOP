@@ -52,7 +52,7 @@ public class Test {
 				people.add(new Person(name, address));
 			} System.out.println();
 		} in.close();
-		System.out.println("Stop processing...\n");
+		System.out.println("Stop processing...\n\n");
 		
 		
 		if(!people.isEmpty()) {
