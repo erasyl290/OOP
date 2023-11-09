@@ -1,4 +1,4 @@
-package problem1;
+package problem1_2;
 
 public abstract class Entity {
 	public static int quantity;
@@ -37,15 +37,6 @@ public abstract class Entity {
 	public Entity(int hp, int a, int b) {
 		this(hp);
 		setSize(a, b);
-	}
-
-	public void move(double dx) {
-		this.x += dx;
-	}
-	
-	public void move(double dx, double dy) {
-		this.x += dx;
-		this.y += dy;
 	}
 	
 	public abstract void interaction(Entity e);

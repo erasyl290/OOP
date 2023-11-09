@@ -1,4 +1,4 @@
-package problem1;
+package problem1_2;
 
 public class Wall extends Entity {
 
@@ -18,8 +18,11 @@ public class Wall extends Entity {
 				entityUp = entity.y + entity.height / 2, entityDown = entity.y - entity.height / 2;
 		double thisLeft = this.x - this.width / 2, thisRight = this.x + this.width / 2,
 				thisUp = this.y + this.height / 2, thisDown = this.y - this.height / 2;
-		while ((entityRight == thisLeft || entityLeft == thisRight) && entityDown <= thisUp && entityUp >= thisDown)
-			entity.move(0);
+		if (entity instanceof Moveable) {
+			Moveable action = (Moveable) entity;
+			while ((entityRight == thisLeft || entityLeft == thisRight) && entityDown <= thisUp && entityUp >= thisDown)
+				action.move(false);
+		}
 	}
 
 	@Override
