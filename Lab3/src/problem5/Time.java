@@ -1,4 +1,4 @@
-package problem3;
+package problem5;
 
 public class Time implements Comparable<Time> {
 	public int hour, min, sec;
